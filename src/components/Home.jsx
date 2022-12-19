@@ -17,6 +17,7 @@ import Button from "./Button/Button.component";
 const Home = () => {
   const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } =
     useHomeFetch();
+  if (error) return <div>Something went wrong...</div>;
   return (
     <Fragment>
       {!searchTerm && state.results[0] ? (
